@@ -1,3 +1,13 @@
 body {
-  background-color: rgb(176, 176, 176);
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.jumbotron {
+  background: rgb(255,224,237);
+  background: radial-gradient(circle, rgba(255,224,237,0.7721463585434174) 0%, rgba(222,222,255,0.7301295518207283) 100%);
+}
+
+.hidden {
+  display: none;
 }

@@ -4,13 +4,15 @@
   <title>Currency exchange</title>
 </head>
 <body class="container text-center">
-  <h3>Convert some currency, my friend</h3>
-  <form id="currency-exchange-form">
+  
+  <form id="currency-exchange-form" class="jumbotron m-3">
+    <h3>Convert some currency, my friend</h3>
 
     <label for="amount">Enter an amount to convert:</label>
-    <input id="amount" type="number">
+    <input id="amount" type="number" value="10" min="1">
+    <br>
 
-    <select id="currency-from" name="currency-from">
+    <select id="currency-from" name="currency-from" class="p-3 m-3">
       <option>Select currency</option>
       <option value="AFN">Afghan Afghani</option>
       <option value="ALL">Albanian Lek</option>
@@ -166,7 +168,7 @@
       <option value="ZMK">Zambian Kwacha</option>
   </select>
 
-  <select id="currency-to" name="currency-to">
+  <select id="currency-to" name="currency-to" class="p-3 m-3">
     <option>Select currency</option>
       <option value="AFN">Afghan Afghani</option>
       <option value="ALL">Albanian Lek</option>
@@ -321,12 +323,13 @@
       <option value="YER">Yemeni Rial</option>
       <option value="ZMK">Zambian Kwacha</option>
     </select>
-
+    <br>
     <button type="submit">Submit</button>
   </form>
-
-  <div id="output"></div>
-  <div id="error"></div>
+  <div class="jumbotron m-3 hidden">
+    <div id="output"></div>
+    <div id="error"></div>
+  </div>
 
 </body>
 </html>
