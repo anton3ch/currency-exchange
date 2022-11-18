@@ -5,14 +5,14 @@
 </head>
 <body class="container text-center">
   
-  <form id="currency-exchange-form" class="jumbotron m-3">
-    <h2>Convert some currency, my friend</h2>
+  <form id="currency-exchange-form" class="jumbotron m-3 jum1">
+    <h2 class="p-4">Convert some currency, my friend!</h2>
 
-    <label for="amount">Enter an amount to convert:</label>
-    <input id="amount" type="number" value="10" min="1">
+    <label for="amount" class="m-3">Enter an amount to convert:</label>
+    <input id="amount" class="custom-select number" type="number" value="10" min="1">
     <br>
 
-    <select id="currency-from" name="currency-from" class="custom-select p-3 m-3">
+    <select id="currency-from" name="currency-from" class="custom-select p-3 m-5">
       <option>Convert from</option>
       <option value="AFN">Afghan Afghani</option>
       <option value="ALL">Albanian Lek</option>
@@ -326,10 +326,10 @@
     <br>
     <button type="submit" class="button-38">Convert</button>
   </form>
-  <div class="jumbotron m-3 hidden">
+  <div class="jumbotron m-3 hidden jum2">
     <div id="output"></div>
     <div id="error"></div>
   </div>
-
+  <img src="./assets/images/wrong-input.png" alt="select currencies first" class="wrong-input" width="400px">
 </body>
 </html>
