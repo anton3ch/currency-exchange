@@ -8,12 +8,10 @@ import CurrencyExchange from './js/currency-exchange.js';
 // Business logic 
 
 function exchangeCurrency(currencyFrom, currencyTo, amount) {
-  console.log(currencyFrom, currencyTo, amount, "currencyFrom, currencyTo, amount");
   CurrencyExchange.exchangeCurrency(currencyFrom, currencyTo, amount)
     .then(function(response) {
-      console.log(response, "response");
       if(response instanceof Error) {
-        const errorMessage = `there was a problem accessing the currency exchange data from ExchangeRate-API for ${currencyFrom," ", currencyTo}:
+        const errorMessage = `there was a problem accessing the currency exchange data from ExchangeRate-API for ${currencyFrom} / ${currencyTo}:
         ${response["error-type"]}`;
         throw new Error(errorMessage);
       } 
@@ -43,10 +41,11 @@ function clearResults() {
 function handleFormSubmission(event) {
   event.preventDefault();
   clearResults();
-  const currencyTo = $("#currency-to").val();
   const currencyFrom = $("#currency-from").val();
+  const currencyTo = $("#currency-to").val();
   const amount = $("#amount").val();
-  exchangeCurrency(currencyTo, currencyFrom, amount);
+  exchangeCurrency(currencyFrom, currencyTo, amount);
+  $(".jumbotron").slideDown(1000);
 }
 
 window.addEventListener("load", function() {
