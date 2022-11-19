@@ -49,7 +49,7 @@ Currency Exchanger converts currency between all available currency types. A use
       ~/Desktop/currency-exchange $ echo "API_KEY={YOUR API KEY}" > .env
      ```
      Replace {YOUR API KEY} with your API key, remove curly brackets.
-  5. Make sure you have ".env" in your .gitignore file. If not, type following command in your command line:
+  5. Make sure you have ".env" in your .gitignore file. If not, type the following command in your command line:
      ```
       ~/Desktop/currency-exchange $ echo ".env" >> .gitignore
      ```

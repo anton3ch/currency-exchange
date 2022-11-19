@@ -18,6 +18,12 @@ function exchangeCurrency(currencyFrom, currencyTo, amount) {
           throw new Error(errorMessage);
         } 
         const description = response;
+
+        const conversionRate = description["conversion_rate"];
+        const key = `${description["base_code"]}${description["target_code"]}`;
+        sessionStorage.setItem(key, conversionRate);
+
+
         printElements(description, currencyFrom, currencyTo, amount);
       })
       .catch(function(error) {
@@ -37,6 +43,11 @@ function printElements(response, currencyFrom, currencyTo, amount) {
   $(".jum2").slideDown(1000);
 }
 
+function printStored(currencyFrom, currencyTo, amount, key) {
+  let rate = sessionStorage.getItem(key);
+  document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${rate}</span> will be <span class="bold">${amount * rate}</span>`;
+  $(".jum2").slideDown(1000);
+}
 
 function printError(error) {
   document.querySelector('#error').innerText = error;
@@ -55,7 +66,13 @@ function handleFormSubmission(event) {
   const currencyFrom = $("#currency-from").val();
   const currencyTo = $("#currency-to").val();
   const amount = $("#amount").val();
-  exchangeCurrency(currencyFrom, currencyTo, amount);
+
+  const key = currencyFrom + currencyTo;
+  if(sessionStorage.getItem(key)) {
+    printStored(currencyFrom, currencyTo, amount, key);
+  } else {
+    exchangeCurrency(currencyFrom, currencyTo, amount);
+  }
 }
 
 window.addEventListener("load", function() {
