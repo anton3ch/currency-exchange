@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya&display=swap');
+
 html {
   height: 100%;
   font-size: 62.5%;
@@ -72,9 +73,11 @@ body {
   border: 1px solid #ddd;
   border-radius: 3px;
 }
+
 .custom-select:hover {
   border: 1px solid #999;
 }
+
 .custom-select:focus {
   border: 1px solid #999;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);

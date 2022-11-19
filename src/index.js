@@ -4,7 +4,6 @@ import './css/styles.css';
 import $ from "jquery";
 import CurrencyExchange from './js/currency-exchange.js';
 
-
 // Business logic 
 
 function exchangeCurrency(currencyFrom, currencyTo, amount) {
@@ -22,7 +21,6 @@ function exchangeCurrency(currencyFrom, currencyTo, amount) {
         const conversionRate = description["conversion_rate"];
         const key = `${description["base_code"]}${description["target_code"]}`;
         sessionStorage.setItem(key, conversionRate);
-
 
         printElements(description, currencyFrom, currencyTo, amount);
       })
