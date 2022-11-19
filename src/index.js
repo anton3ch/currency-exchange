@@ -37,13 +37,13 @@ function exchangeCurrency(currencyFrom, currencyTo, amount) {
 
 // UI Logic
 function printElements(response, currencyFrom, currencyTo, amount) {
-  document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${response['conversion_rate']}</span> will be <span class="bold">${response['conversion_result']}</span>`;
+  document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${response['conversion_rate']}</span> will be <span class="bold">${response['conversion_result']} ${currencyTo}</span>`;
   $(".jum2").slideDown(1000);
 }
 
 function printStored(currencyFrom, currencyTo, amount, key) {
   let rate = sessionStorage.getItem(key);
-  document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${rate}</span> will be <span class="bold">${amount * rate}</span>`;
+  document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${rate}</span> will be <span class="bold">${amount * rate} ${currencyTo}</span>`;
   $(".jum2").slideDown(1000);
 }
 
