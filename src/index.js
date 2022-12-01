@@ -28,14 +28,19 @@ function exchangeCurrency(currencyFrom, currencyTo, amount) {
         printError(error);
       });
   } else {
-    $(".wrong-input").show(1000);
-    setTimeout(function() {
-      $(".wrong-input").hide(1000);
-    }, 5000);
+    printInputError();
   }
 }
 
 // UI Logic
+
+function printInputError() {
+  $(".wrong-input").show(1000);
+  setTimeout(function() {
+    $(".wrong-input").hide(1000);
+  }, 5000);
+}
+
 function printElements(response, currencyFrom, currencyTo, amount) {
   document.getElementById('output').innerHTML = `<span class="bold">${amount} ${currencyFrom}</span> converted to <span class="bold">${currencyTo}</span> with a conversion rate of <span class="bold">${response['conversion_rate']}</span> will be <span class="bold">${response['conversion_result']} ${currencyTo}</span>`;
   $(".jum2").slideDown(1000);
